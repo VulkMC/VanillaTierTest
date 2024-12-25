@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Minecraft Hosting</title>
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #121212;
+            color: #f4f4f4;
+            text-align: center;
+            line-height: 1.6;
+        }
+        h1, h2, p {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #ffd700;
+        }
+
+        /* Header Section */
+        header {
+            position: relative;
+            background: linear-gradient(90deg, #6a11cb, #2575fc, #ff416c);
+            color: #fff;
+            padding: 30px 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Discord Button */
+        .discord-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #5865f2;
+            color: #fff;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .discord-btn img {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+        .discord-btn:hover {
+            background-color: #4752c4;
+            transform: scale(1.1);
+        }
+
+        /* Animated Logo */
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 20px auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #1e1e2e;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        nav button {
+            background: none;
+            border: 2px solid #6a11cb;
+            color: #f4f4f4;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+        nav button:hover {
+            background: #6a11cb;
+            color: #fff;
+        }
+
+        /* Content Sections */
+        .content {
+            display: none;
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            background: #1e1e2e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+        .content.active {
+            display: block;
+        }
+        .content h2 {
+            color: #ffd700;
+        }
+
+        /* Hosting Plans */
+        .plans {
+            margin: 20px auto;
+            text-align: left;
+            max-width: 600px;
+            background: #1e1e2e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .plans h3 {
+            color: #ffd700;
+            margin-bottom: 5px;
+        }
+        .plans p {
+            margin: 5px 0;
+            color: #ccc;
+        }
+
+        /* Order Now Button */
+        .order-btn {
+            padding: 12px 20px;
+            background-color: #ffd700;
+            color: #121212;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+        .order-btn:hover {
+            background-color: #ffb700;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f0f;
+            color: #aaa;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>⚡ HunterNode ⚡</h1>
+        <p>Asia's #1 Cheapest Proxy Hosting | Powered by Ryzen Servers</p>
+        <button class="discord-btn" onclick="openDiscord()">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord Logo">
+            Join Discord
+        </button>
+    </header>
+
+    <!-- Logo -->
+    <img src="https://cdn.discordapp.com/attachments/1286985594018205728/1318756398452051968/273e2832bc6520ead8d9915da4357393.png" alt="Hosting Logo" class="logo">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <button onclick="showContent('vps')">💻 VPS Hosting</button>
+        <button onclick="showContent('minecraft')">⛏️ Minecraft Hosting</button>
+    </nav>
+
+    <!-- VPS Hosting -->
+    <div id="vps" class="content">
+        <h2>💻 VPS Hosting</h2>
+        <div class="plans">
+            <div>
+                <h3>HN-Basic</h3>
+                <p>1x vCPU Core | AMD Epyc-7C13 @ 3.7GHz</p>
+                <p>4 GB DDR4 RAM</p>
+                <p>20 GB NVMe SSD</p>
+                <p>Unmetered* Bandwidth</p>
+                <p>400 Rs /mo</p>
+            </div>
+            <button class="order-btn" onclick="orderNow()">Order Now</button>
+        </div>
+        <div class="plans">
+            <div>
+                <h3>HN-Pro</h3>
+                <p>2x vCPU Core | AMD Epyc-7C13 @ 3.7GHz</p>
+                <p>8 GB DDR4 RAM</p>
+                <p>40 GB NVMe SSD</p>
+                <p>Unmetered* Bandwidth</p>
+                <p>1600 Rs /mo</p>
+            </div>
+            <button class="order-btn" onclick="orderNow()">Order Now</button>
+        </div>
+        <div class="plans">
+            <div>
+                <h3>HN-Lite</h3>
+                <p>4x vCPU Core | AMD Epyc-7C13 @ 3.7GHz</p>
+                <p>16 GB DDR4 RAM</p>
+                <p>80 GB NVMe SSD</p>
+                <p>Unmetered* Bandwidth</p>
+                <p>3200 Rs /mo</p>
+            </div>
+            <button class="order-btn" onclick="orderNow()">Order Now</button>
+        </div>
+        <div class="plans">
+            <div>
+                <h3>HN-Plus</h3>
+                <p>8x vCPU Core | AMD Epyc-7C13 @ 3.7GHz</p>
+                <p>32 GB DDR4 RAM</p>
+                <p>160 GB NVMe SSD</p>
+                <p>Unmetered* Bandwidth</p>
+                <p>4800 Rs /mo</p>
+            </div>
+            <button class="order-btn" onclick="orderNow()">Order Now</button>
+        </div>
+        <div class="plans">
+            <div>
+                <h3>HN-Premium</h3>
+                <p>12x vCPU Core | AMD Epyc-7C13 @ 3.7GHz</p>
+                <p>48 GB DDR4 RAM</p>
+                <p>240 GB NVMe SSD</p>
+                <p>Unmetered* Bandwidth</p>
+                <p>6400 Rs /mo</p>
+            </div>
+            <button class="order-btn" onclick="orderNow()">Order Now</button>
+        </div>
+        <div class="plans">
+            <div>
+                <h3>HN-Elite</h3>
+                <p>16x vCPU Core | AMD Epyc-7C13 @ 3.7GHz</p>
+                <p>64 GB DDR4 RAM</p>
+                <p>320 GB NVMe SSD</p>
+                <p>Unmetered* Bandwidth</p>
+                <p>9600 Rs /mo</p>
+            </div>
+            <button class="order-btn" onclick="orderNow()">Order Now</button>
+        </div>
+        <div class="plans">
+            <div>
+                <h3>HN-Advanced</h3>
+                <p>24x vCPU Core | AMD Epyc-7C13 @ 3.7GHz</p>
+                <p>96 GB DDR4 RAM</p>
+                <p>480 GB NVMe SSD</p>
+                <p>Unmetered* Bandwidth</p>
+                <p>12800 Rs /mo</p>
+            </div>
+            <button class="order-btn" onclick="orderNow()">Order Now</button>
+        </div>
+        <div class="plans">
+            <div>
+                <h3>HN-Turbo</h3>
+                <p>32x vCPU Core | AMD Epyc-7C13 @ 3.7GHz</p>
+                <p>128 GB DDR4 RAM</p>
+                <p>640 GB NVMe SSD</p>
+                <p>Unmetered* Bandwidth</p>
+                <p>15000 Rs /mo</p>
+            </div>
+            <button class="order-btn" onclick="orderNow()">Order Now</button>
+        </div>
+    </div>
+
+    <!-- Minecraft Hosting -->
+    <div id="minecraft" class="content active">
+        <h2>⛏️ Minecraft Hosting</h2>
+        <p>Explore, build, and conquer with <strong>top-tier Minecraft hosting</strong> backed by Ryzen. ⚒️</p>
+        <div class="plans">
+            <div>
+                <h3>🌱 DIRT PLAN</h3>
+                <p>RAM: 2 GB</p>
+                <p>CPU: 70%</p>
+                <p>DISK: 10 GB</p>
+                <p>PRICE: 69₹</p>
+            </div>
+            <button class="order-btn" onclick="orderNow()">Order Now</button>
+        </div>
+        <div class="plans">
+            <div>
+                <h3>🪨 IRON PLAN</h3>
+                <p>RAM: 4 GB</p>
+                <p>CPU: 150%</p>
+                <p>DISK: 15 GB</p>
+                <p>PRICE: 99₹</p>
+            </div>
+            <button class="order-btn" onclick="orderNow()">Order Now</button>
+        </div>
+        <div class="plans">
+            <div>
+                <h3>🟡 GOLD PLAN</h3>
+                <p>RAM: 6 GB</p>
+                <p>CPU: 200%</p>
+                <p>DISK: 20 GB</p>
+                <p>PRICE: 179₹</p>
+            </div>
+            <button class="order-btn" onclick="orderNow()">Order Now</button>
+        </div>
+        <div class="plans">
+            <div>
+                <h3>💎 DIAMOND PLAN</h3>
+                <p>RAM: 8 GB</p>
+                <p>CPU: 250%</p>
+                <p>DISK: 25 GB</p>
+                <p>PRICE: 249₹</p>
+            </div>
+            <button class="order-btn" onclick="orderNow()">Order Now</button>
+        </div>
+        <div class="plans">
+            <div>
+                <h3>🪓 NETHERITE PLAN</h3>
+                <p>RAM: 16 GB</p>
+                <p>CPU: 300%</p>
+                <p>DISK: 30 GB</p>
+                <p>PRICE: 399₹</p>
+            </div>
+            <button class="order-btn" onclick="orderNow()">Order Now</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Professional Hosting Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showContent(section) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(section).classList.add('active');
+        }
+
+        function openDiscord() {
+            window.open('https://discord.gg/6xjAvZd4BG', '_blank');
+        }
+
+        function orderNow() {
+            alert("Order placement functionality coming soon!");
+        }
+    </script>
+</body>
+</html>
