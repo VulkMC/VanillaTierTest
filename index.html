@@ -69,29 +69,6 @@
             height: 50px;
             border-radius: 50%; 
         }
-        .card {
-            display: none; 
-            background-color: #444;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 20px;
-            width: 300px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            position: fixed; 
-            left: 20px;
-            top: 120px; 
-        }
-        .card img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-        .card .player-name {
-            font-size: 22px;
-            color: #fff;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
@@ -114,23 +91,20 @@
 
     <div id="tier-info" class="tier-info"></div>
 
-    <div id="player-card" class="card">
-        <img src="https://cdn.discordapp.com/attachments/1331204648371224639/1335496754778472489/3d.png?ex=67a061c6&is=679f1046&hm=ceb195c07cb9b332ed05657edc51eacbc454c848c1a592f24af4ed00cb65d73a&" alt="Not_JackMC">
-        <div class="player-name">Not_JackMC</div>
-        <div>Tier: LT4</div>
-        <div>Primium</div>
-    </div>
-
     <script>
         function showTierInfo(tier) {
             const tierInfo = document.getElementById('tier-info');
             if (tier === 'LT4') {
                 tierInfo.innerHTML = `
                     <div class="player-info">
-                        <img src="https://cdn.discordapp.com/attachments/1331204648371224639/1335496754778472489/3d.png?ex=67a061c6&is=679f1046&hm=ceb195c07cb9b332ed05657edc51eacbc454c848c1a592f24af4ed00cb65d73a&" alt="Not_JackMC">
+                        <img src="https://cdn.discordapp.com/attachments/1322913013786869904/1335601753147576381/3d.png?ex=67a0c390&is=679f7210&hm=5055e9b563cb7bcb452d0e66a6c6f8846f15f9ef2411c3cacedac1d07c289d05&" alt="Not_JackMC">
                         <span>Not_JackMC - Primium</span>
                     </div>
-                    <span>1 player has LT4</span>
+                    <div class="player-info">
+                        <img src="https://cdn.discordapp.com/attachments/1322913013786869904/1335601675070603294/3d.png?ex=67a0c37d&is=679f71fd&hm=bca0f1c1647a976b203ee3d12388e5e1ba9b87bbc742aa10ad37a6b6314373be&" alt="LivingAnsh_">
+                        <span>LivingAnsh_ - Cracked</span>
+                    </div>
+                    <span>2 players have LT4</span>
                 `;
             } else {
                 tierInfo.innerHTML = `${tier}: No Player of ${tier}`;
